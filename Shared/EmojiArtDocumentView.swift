@@ -41,7 +41,7 @@ struct EmojiArtDocumentView: View {
                 }
             }
             .clipped()
-            .onDrop(of: [.plainText,.url,.image], isTargeted: nil) { providers, location in
+            .onDrop(of: [.utf8PlainText,.url,.image], isTargeted: nil) { providers, location in
                 drop(providers: providers, at: location, in: geometry)
             }
             .gesture(panGesture().simultaneously(with: zoomGesture()))
