@@ -34,6 +34,7 @@ struct PaletteChooser: View {
             Image(systemName: "paintpalette")
         }
         .font(emojiFont)
+        .paletteControlButtonStyle()
         .contextMenu { contextMenu }
     }
     
