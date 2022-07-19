@@ -76,6 +76,7 @@ struct EmojiArtDocumentView: View {
                         backgroundPicker = .library
                     }
                 }
+                #if os(iOS)
                 if let undoManager = undoManager {
                     if undoManager.canUndo {
                         AnimatedActionButton(title: undoManager.undoActionName, systemImage: "arrow.uturn.backward") {
@@ -88,6 +89,7 @@ struct EmojiArtDocumentView: View {
                         }
                     }
                 }
+                #endif
             }
             .sheet(item: $backgroundPicker) { pickerType in
                 switch pickerType {
